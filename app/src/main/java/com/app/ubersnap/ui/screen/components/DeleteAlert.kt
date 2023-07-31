@@ -13,13 +13,20 @@ import com.app.ubersnap.R
 import com.app.ubersnap.viewmodel.TodoViewModel
 
 @Composable
-fun DeletAlert(todoViewModel: TodoViewModel, selectedTaskType: Int, deleteAlert: MutableState<Boolean>) {
+fun DeleteAlert(todoViewModel: TodoViewModel, selectedTaskType: Int, deleteAlert: MutableState<Boolean>) {
+    val deleteTaskType = when(selectedTaskType){
+        0 -> {"all"}
+        1 -> {"all completed"}
+        else -> {"all pending"}
+    }
     AlertDialog(
-        text = { Text(
-            stringResource(R.string.delete_all), fontSize = 20.sp, fontFamily = FontFamily(
-                Font(R.font.figtree_semi_bold)
+        text = {
+            Text(
+                stringResource(R.string.delete_tasks, deleteTaskType),
+                fontSize = 20.sp,
+                fontFamily = FontFamily(Font(R.font.figtree_semi_bold))
             )
-        ) },
+        },
         onDismissRequest = { deleteAlert.value = false },
         confirmButton = {
             OutlinedButton(

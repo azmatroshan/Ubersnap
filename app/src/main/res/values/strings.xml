@@ -18,4 +18,5 @@
     <string name="pending_tasks">Pending Tasks</string>
     <string name="linkedin">LinkedIn</string>
     <string name="github">GitHub</string>
+    <string name="delete_tasks">Delete %1$s tasks</string>
 </resources>

@@ -43,7 +43,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.app.ubersnap.R
 import com.app.ubersnap.data.Task
-import com.app.ubersnap.ui.screen.components.DeletAlert
+import com.app.ubersnap.ui.screen.components.DeleteAlert
 import com.app.ubersnap.ui.screen.components.ExposedDropdownMenuBox
 import com.app.ubersnap.ui.screen.components.TaskDialogBox
 import com.app.ubersnap.ui.screen.components.TaskItem
@@ -145,7 +145,7 @@ fun TodoListScreen(todoViewModel: TodoViewModel) {
                 ) {
                     Icon(imageVector = Icons.Default.Delete, contentDescription = stringResource(R.string.delete))
                     if(deleteAlert.value){
-                        DeletAlert( todoViewModel = todoViewModel, selectedTaskType = selectedTaskType.value, deleteAlert = deleteAlert)
+                        DeleteAlert( todoViewModel = todoViewModel, selectedTaskType = selectedTaskType.value, deleteAlert = deleteAlert)
                     }
                 }
             }
